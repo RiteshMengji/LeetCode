@@ -1,0 +1,32 @@
+package com.leetcode.easy;
+
+/**
+ * 344. Reverse String
+ *
+ * Write a function that takes a string as input and returns the string reversed.
+ 	Example:
+ 	Given s = "hello", return "olleh".
+ */
+public class _344_ReverseString {
+
+	public static void main(String[] args) {
+		System.out.println(reverseString("hello"));
+		System.out.println(reverseString("A man, a plan, a canal: Panama"));
+		
+	}
+
+	private static String reverseString(String s) {
+		char[] word = s.toCharArray();
+        int i = 0;
+        int j = s.length() - 1;
+        while (i < j) {
+            char temp = word[i];
+            word[i] = word[j];
+            word[j] = temp;
+            i++;
+            j--;
+        }
+        return new String(word);
+	}
+
+}
