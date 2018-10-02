@@ -27,6 +27,9 @@ public class _1_TwoSum {
 	
 	public static int[] twoSum(int[] nums, int target){
 		int[] solution = new int[2];
+		// INFO: The idea here is to have a map of number and its index and while
+		// iterating over the integer array, check if the difference of target and the current value is in 
+		// the map, if so return the index of target-current_number and index;
 		Map<Integer, Integer> data = new HashMap<Integer, Integer>();
 		for(int i=0; i<nums.length; i++){
 			if(data.containsKey(target-nums[i])){
