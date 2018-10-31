@@ -22,6 +22,8 @@ public class _242_ValidAnagram {
 		System.out.println(isAnagram("cinema", "icemen"));
 		System.out.println(isAnagramHashMap("cinema", "icemaa"));
 		System.out.println(isAnagramHashMap("cinema", "iceman"));
+		
+		System.out.println(isAnagramFirecode("cinema", "iceman"));
 	}
 	
 	public static boolean isAnagram(String a, String b){
@@ -73,5 +75,22 @@ public class _242_ValidAnagram {
 
         return true;
     }
+	
+	public static boolean isAnagramFirecode(String input1, String input2) {
+	    if(input1==null || input2==null || input1.length()!=input2.length()) return false;
+	    
+	    int[] charCount = new int[26];
+	    
+	    for(int i=0;i<input1.length();i++){
+	    	System.out.println(input1.charAt(i) - 'a');
+	        charCount[input1.charAt(i) - 'a']++;
+	        charCount[input2.charAt(i) - 'a']--;
+	    }
+	    
+	    for(int i=0;i<26;i++){
+	        if(charCount[i]!=0) return false;
+	    }
+	    return true;
+	}
 
 }
