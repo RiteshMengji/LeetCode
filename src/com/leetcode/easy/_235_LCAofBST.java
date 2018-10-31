@@ -1,6 +1,6 @@
 package com.leetcode.easy;
 
-import javax.swing.tree.TreeNode;
+import com.leetcode.util.TreeNode;
 
 /** 
  * 
@@ -36,12 +36,14 @@ import javax.swing.tree.TreeNode;
 public class _235_LCAofBST {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 	public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+		if(root == null) return null;
 		
-		return null;
+		if(root.val > Math.max(p.val, q.val)) return lowestCommonAncestor(root.left, p, q);
+		if(root.val < Math.min(p.val, q.val)) return lowestCommonAncestor(root.right, p, q);
+		return root;
     }
 }
