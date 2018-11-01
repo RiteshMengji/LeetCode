@@ -25,8 +25,7 @@ public class _14_LongestCommonPrefix {
 	}
 
 	public static String longestCommonPrefix(String[] strs) {
-		String result="";
-		if(strs.length == 0) return result;
+		if(strs.length == 0) return "";
 		
 		int rows = strs.length;
 		int columns =  strs[0].length();
